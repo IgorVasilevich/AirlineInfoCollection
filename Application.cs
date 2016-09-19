@@ -71,7 +71,7 @@ namespace AirlineInfo
                                 OnFlightPrint = PrintTableHead;
                                 for (int i = 0; i < AirInfoList.Count; i++)
                                 {
-                                    if (AirInfoList[i] != null)
+                                    if (AirInfoList[i].FlightI != null)
                                     {
 
                                         Console.Write(i + 1 + " ");
@@ -87,7 +87,7 @@ namespace AirlineInfo
                                 OnFlightPrint -= PrintWithPriceTableHead;
                                 for (int i = 0; i < AirInfoList.Count; i++)
                                 {
-                                    if (AirInfoList[i] != null)
+                                    if (AirInfoList[i].FlightI != null)
                                     {
 
                                         Console.Write(i + 1);
@@ -107,7 +107,7 @@ namespace AirlineInfo
 
                             for (int i = 0; i < AirInfoList.Count; i++)
                             {
-                                if (AirInfoList[i] != null)
+                                if (AirInfoList[i].FlightI != null)
                                 {
                                     PrintTableHead();
                                     Console.Write("{0} ", i + 1);
@@ -118,9 +118,11 @@ namespace AirlineInfo
                                     for (int j = 0; j < AirInfoList[i].Passengers.Count; j++)
                                     {
 
-
-                                        Console.Write("{0} ", j + 1);
-                                        AirInfoList[i].Passengers[j].PrintPassengers();
+                                        if (AirInfoList[i].Passengers != null)
+                                        {
+                                            Console.Write("{0} ", j + 1);
+                                            AirInfoList[i].Passengers[j].PrintPassengers();
+                                        }
                                     }
                                     Console.ReadLine();
                                 }
@@ -178,7 +180,7 @@ namespace AirlineInfo
                                 }
                                 Console.WriteLine("Enter number position to delete");
                                 int iter2 = int.Parse(Console.ReadLine());
-                                AirInfoList[iter - 1].FlightI.Delete();
+                                AirInfoList[iter2 - 1].FlightI.Delete();
                             }
                             if (choiseCase3 == 0)
                                 break;
