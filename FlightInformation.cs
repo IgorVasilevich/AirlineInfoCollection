@@ -7,16 +7,17 @@ using System.Threading.Tasks;
 
 namespace AirlineInfo
 {
-   public  enum Status
-    { CheckIn,
-      GateClosed,
-      Arrived,
-      DepartedAt,
-      Unknown,
-      Canseled,
-      ExpectedAt,
-      Delayed,
-      InFlight
+    public enum Status
+    {
+        CheckIn,
+        GateClosed,
+        Arrived,
+        DepartedAt,
+        Unknown,
+        Canseled,
+        ExpectedAt,
+        Delayed,
+        InFlight
     }
 
     public class FlightInformation : IEnumerator
@@ -44,7 +45,7 @@ namespace AirlineInfo
             }
         }
 
-        public FlightInformation(DateTime dtArrival,DateTime dtDeparture,string flightN,
+        public FlightInformation(DateTime dtArrival, DateTime dtDeparture, string flightN,
             string cityArrival, string cityDeparture, string terminal,
             Status flightStatus, string gate, params FlyClass[] fClass)
         {
@@ -82,7 +83,7 @@ namespace AirlineInfo
                 Console.WriteLine("Enter price for {0}", FClass[i].Flyclass);
                 FClass[i].Price = float.Parse(Console.ReadLine());
             }
-            
+
         }
 
         public void Delete()
@@ -115,20 +116,19 @@ namespace AirlineInfo
             Console.WriteLine("Enter new terminal:");
             Terminal = Console.ReadLine();
             Console.WriteLine("Enter new flight status:");
-            FlightStatus = (Status)Enum.Parse(typeof(Status),Console.ReadLine());
+            FlightStatus = (Status)Enum.Parse(typeof(Status), Console.ReadLine());
             Console.WriteLine("Enter new gate:");
             Gate = Console.ReadLine();
             for (int i = 0; i < FClass.Length; i++)
             {
-                Console.WriteLine("Enter price for {0}",FClass[i].Flyclass);
+                Console.WriteLine("Enter price for {0}", FClass[i].Flyclass);
                 FClass[i].Price = float.Parse(Console.ReadLine());
             }
         }
-        
+
 
         public void Print()
         {
-          
             Console.Write("|{0}", DTArrival.ToString().PadRight(21));
             Console.Write("|{0}", DTDeparture.ToString().PadRight(23));
             Console.Write("|{0}", FlightN.PadRight(8));
@@ -140,12 +140,10 @@ namespace AirlineInfo
             Console.WriteLine();
             Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------------------------");
         }
-        
-        
+
+
         public void PrintWithPrices()
         {
-
-
             Console.Write("|{0}", DTArrival.ToString().PadRight(21));
             Console.Write("|{0}", DTDeparture.ToString().PadRight(23));
             Console.Write("|{0}", FlightN.PadRight(8));
@@ -155,7 +153,7 @@ namespace AirlineInfo
             Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------------------------");
             for (int i = 0; i < FClass.Length; i++)
             {
-                Console.WriteLine("Price for {0} class:{1}",FClass[i].Flyclass,FClass[i].Price);
+                Console.WriteLine("Price for {0} class:{1}", FClass[i].Flyclass, FClass[i].Price);
             }
             Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------------------------");
         }
@@ -164,7 +162,7 @@ namespace AirlineInfo
         {
             for (int i = 0; i < FClass.Length; i++)
             {
-                if (min <= FClass[i].Price&&FClass[i].Price <= max)
+                if (min <= FClass[i].Price && FClass[i].Price <= max)
                 {
                     PrintWithPrices();
                 }
@@ -173,7 +171,7 @@ namespace AirlineInfo
 
         public void SearchPrintByFNumber(string fnumber)
         {
-            if (fnumber==FlightN.ToString())
+            if (fnumber == FlightN.ToString())
             {
                 Console.Write("|{0}", DTArrival.ToString().PadRight(21));
                 Console.Write("|{0}", DTDeparture.ToString().PadRight(23));
@@ -245,9 +243,7 @@ namespace AirlineInfo
 
         public void Reset()
         {
-           position=-1;
+            position = -1;
         }
-
-       
     }
 }

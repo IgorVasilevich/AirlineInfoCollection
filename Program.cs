@@ -13,8 +13,6 @@ namespace AirlineInfo
         {
             Application App = new Application();
             App.Run();
-
-        } 
-
+        }
     }
-    }
+}

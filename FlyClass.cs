@@ -22,6 +22,5 @@ namespace AirlineInfo
             //Price = price;
             Flyclass = flyC;
         }
-
     }
 }

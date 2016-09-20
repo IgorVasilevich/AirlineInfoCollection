@@ -49,7 +49,6 @@ namespace AirlineInfo
             SexPass = (Sex)Enum.Parse(typeof(Sex), Console.ReadLine());
             Console.WriteLine("Enter new class of flight(Business/Economy):");
             FlyClass fClass = new FlyClass((FlyC)Enum.Parse(typeof(FlyC), Console.ReadLine()));
-         
         }
 
         public void EditPassenger()
@@ -67,7 +66,7 @@ namespace AirlineInfo
             Console.WriteLine("Enter sex(Male/Famale):");
             SexPass = (Sex)Enum.Parse(typeof(Sex), Console.ReadLine());
             Console.WriteLine("Enter new class of flight(Business/Economy):");
-            FClass.Flyclass = (FlyC)Enum.Parse(typeof(FlyC),Console.ReadLine());
+            FClass.Flyclass = (FlyC)Enum.Parse(typeof(FlyC), Console.ReadLine());
         }
         public void DeletePassenger()
         {
@@ -80,10 +79,9 @@ namespace AirlineInfo
             FClass = null;
         }
 
-      
         public void PrintPassengers()
         {
-            Console.Write("| {0}",(FirstName.ToString()).PadRight(20));
+            Console.Write("| {0}", (FirstName.ToString()).PadRight(20));
             Console.Write("| {0}", (SecondName.ToString()).PadRight(20));
             Console.Write("| {0}", (Nationality.ToString()).PadRight(15));
             Console.Write("| {0}", (Passport.ToString()).PadRight(15));
@@ -136,7 +134,5 @@ namespace AirlineInfo
                 Console.WriteLine();
             }
         }
-
-        
     }
 }

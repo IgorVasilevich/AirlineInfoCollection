@@ -16,7 +16,5 @@ namespace AirlineInfo
             FlightI = flight;
             Passengers = passengers;
         }
-
-      
     }
 }
