@@ -33,29 +33,29 @@ namespace AirlineInfo
                 {
                     case 1:
                         {
-                            Case1Run();
+                            PrintFlyInfo();
                             break;
                         }
                     case 2:
                         {
-                            Case2Run();
+                            PrintPaasengerInfo();
                             break;
                         }
 
                     case 3:
                         {
-                            Case3Run();
+                            EditFlight();
                             break;
                         }
                     case 4:
                         {
-                            Case4Run();
+                            EditPassengers();
                             break;
 
                         }
                     case 5:
                         {
-                            Case5Run();
+                            CustomSearch();
                             break;
                         }
                     default:
@@ -108,7 +108,7 @@ namespace AirlineInfo
                ));
             Passengers.Clear();
         }
-        public void Case1Run()
+        public void PrintFlyInfo()
         {
             Console.Clear();
             Console.WriteLine("1.View information about Fligts");
@@ -148,7 +148,7 @@ namespace AirlineInfo
                 return;
         }
 
-        public void Case2Run()
+        public void PrintPaasengerInfo()
         {
             Console.Clear();
 
@@ -178,7 +178,7 @@ namespace AirlineInfo
 
         }
 
-        public void Case3Run()
+        public void EditFlight()
         {
             Console.Clear();
             Console.WriteLine("1. Add new Flight");
@@ -232,7 +232,7 @@ namespace AirlineInfo
             if (choiseCase3 == 0)
                 return;
         }
-        public void Case4Run()
+        public void EditPassengers()
         {
             Console.Clear();
             Console.WriteLine("1.Add passengers to Flight");
@@ -335,7 +335,7 @@ namespace AirlineInfo
                 return;
 
         }
-        public void Case5Run()
+        public void CustomSearch()
         {
             Console.Clear();
             Console.WriteLine("1.Search by Flight number");
